@@ -30,8 +30,8 @@ public class Level3CodingExam {
 
 		assertEquals("pope francis", new VoteProcessor().calculateElectionWinner(votes));
 	}
-
 	/** If neither candidate has more votes than the other, report a tie by returning the String "TIE". **/
+	
 	@Test
 	public void testATie() {
 		ArrayList<String> votes = new ArrayList<String>();
@@ -50,21 +50,22 @@ public class Level3CodingExam {
 	@Test
 	public void testAddMatching() throws Exception {
 		HashMap<String, String> hashmap1 = new HashMap<String, String>();
-		hashmap1.put("Alice", "Healthy");
-		hashmap1.put("Mary", "Ecstatic");
-		hashmap1.put("Bob", "Happy");
-		hashmap1.put("Chuck", "Fine");
-		hashmap1.put("Felix", "Sick");
+		hashmap1.put("Alice", "Healthy"); //not included
+		hashmap1.put("Mary", "Ecstatic"); //same1
+		hashmap1.put("Bob", "Happy"); //same2
+		hashmap1.put("Chuck", "Fine"); // not included
+		hashmap1.put("Felix", "Sick");//differ1
 
 		HashMap<String, String> hashmap2 = new HashMap<String, String>();
-		hashmap2.put("Mary", "Ecstatic");
-		hashmap2.put("Felix", "Healthy");
-		hashmap2.put("Ricardo", "Superb");
-		hashmap2.put("Tam", "Fine");
-		hashmap2.put("Bob", "Happy");
+		hashmap2.put("Mary", "Ecstatic"); //same1
+		hashmap2.put("Felix", "Healthy"); //differ1
+		hashmap2.put("Ricardo", "Superb");//not included
+		hashmap2.put("Tam", "Fine"); //not included
+		hashmap2.put("Bob", "Happy"); //same2
 
 		assertEquals(2, new HashMapCalculator().commonKeyValuePairs(hashmap1, hashmap2));
 	}
+	
 }
 
 
